@@ -1,0 +1,30 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Set REMOTE_USER environment variable
+
+RewriteRule .\* - [E=REMOTE_USER:%{HTTP:Authorization}]
+
+# Base URL for WordPress headless server
+
+RewriteBase /wp-headless/server/
+RewriteRule ^index\.php$ - [L]
+
+# Custom rewrite rule for sample-post
+
+RewriteRule ^sample-post/?$ index.php?pagename=sample-post [L]
+
+# Default WordPress rules for headless server
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /wp-headless/server/index.php [L]
+
+# Additional rules
+
+RewriteBase /
+RewriteRule ^index.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
