@@ -23,7 +23,7 @@ const Navbar = () => {
           className="h-[55px] w-[55px] lg:h-[70px] lg:w-[70px] cursor-pointer rounded-full object-cover ml-4 lg:ml-0"
           alt="Twan"
         />
-        <div className="absolute left-2.5 mt-2 bg-white rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out pointer-events-none group-hover:pointer-events-auto">
+        <div className="absolute left-1/2 -translate-x-1/2 mt-2 bg-white rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out pointer-events-none group-hover:pointer-events-auto">
           <div className="relative">
             <div className="absolute left-1/2 transform -translate-x-1/2 -top-1.5 w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-b-8 border-b-white"></div>
             <ul className="py-1">
@@ -76,9 +76,7 @@ const Navbar = () => {
               CV
             </p>
           </li>
-          <div
-            className="absolute mt-1.5 bg-white rounded-md opacity-0 pointer-events-none group-hover:pointer-events-auto group-hover:opacity-100 transition-opacity duration-300 ease-in-out"
-            style={{ left: "0.3rem" }}>
+          <div className="absolute left-1/2 -translate-x-1/2 mt-1.5 bg-white rounded-md opacity-0 pointer-events-none group-hover:pointer-events-auto group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
             <div className="relative group-hover:pointer-events-auto group-hover:opacity-100">
               <div className="absolute left-1/2 transform -translate-x-1/2 -top-1.5 w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-b-8 border-b-white group-hover:pointer-events-auto group-hover:opacity-100"></div>
               <ul className="py-1">
@@ -98,7 +96,7 @@ const Navbar = () => {
       </ul>
       {/* Mobile Device */}
       <div
-        className={`fixed inset-0 bg-opacity-50 z-40 transition-opacity duration-500 ${
+        className={`fixed inset-0 bg-black bg-opacity-30 z-40 transition-opacity duration-500 ${
           toggle ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
         onClick={handleToggle}></div>
@@ -118,22 +116,22 @@ const Navbar = () => {
         </li>
         <li
           onClick={handleToggle}
-          className="cursor-pointer  duration-200 hover:bg-[#2e3136] p-2 pr-4 pl-4 rounded-md">
+          className="cursor-pointer duration-200 hover:bg-[#2e3136] p-2 pr-4 pl-4 rounded-md">
           <a href="#portfolio">Portfolio</a>
         </li>
         <li
           onClick={handleToggle}
-          className="cursor-pointer  duration-200 hover:bg-[#2e3136] p-2 pr-4 pl-4 rounded-md">
+          className="cursor-pointer duration-200 hover:bg-[#2e3136] p-2 pr-4 pl-4 rounded-md">
           <a href="#resume">Resume</a>
         </li>
         <li
           onClick={handleToggle}
-          className="cursor-pointer  duration-200 hover:bg-[#2e3136] p-2 pr-4 pl-4 rounded-md">
+          className="cursor-pointer duration-200 hover:bg-[#2e3136] p-2 pr-4 pl-4 rounded-md">
           <a href="#contact">Contact</a>
         </li>
         <li
           onClick={handleToggle}
-          className="text-[#c4cfde] rounded-md px-4 cursor-pointer duration-700">
+          className="cursor-pointer duration-200 hover:bg-[#2e3136] p-2 pr-4 pl-4 rounded-md">
           <a
             href="cv/Twan Asselbergs CV.pdf"
             download
