@@ -68,11 +68,13 @@ const Navbar = () => {
           className="relative group"
           onMouseEnter={handleDropdownToggle}
           onMouseLeave={handleDropdownToggle}>
-          <li
-            className={`text-[#c4cfde] rounded-md px-4 cursor-pointer duration-700 ${
-              dropdownOpen ? "text-[#2e3136]" : ""
-            }`}>
-            <p>CV</p>
+          <li className="text-[#c4cfde] rounded-md px-4 cursor-pointer duration-700">
+            <p
+              className={`transition-colors duration-700 ease-in-out ${
+                dropdownOpen ? "text-[#2e3136]" : ""
+              }`}>
+              CV
+            </p>
           </li>
           <div
             className="absolute mt-1.5 bg-white rounded-md opacity-0 pointer-events-none group-hover:pointer-events-auto group-hover:opacity-100 transition-opacity duration-300 ease-in-out"
