@@ -34,7 +34,7 @@ const Navbar = () => {
         <li className="cursor-pointer duration-200 hover:bg-[#2e3136] p-2 pr-4 pl-4 rounded-md">
           <a href="#contact">Contact</a>
         </li>
-        <li className="buy-btn text-[#ff014f] rounded-md px-4 cursor-pointer duration-700 py-4 hover:text-[#2e3136]">
+        <li className="buy-btn text-[#c4cfde] rounded-md px-4 cursor-pointer duration-700 py-4 hover:text-[#2e3136]">
           <a href="/cv/cv.pdf" download>
             CV
           </a>
@@ -77,13 +77,13 @@ const Navbar = () => {
         </li>
         <li
           onClick={handleToggle}
-          className="buy-btn text-[#ff014f] rounded-md px-4 cursor-pointer duration-700 hover:shadow-xl shadow-md">
+          className="buy-btn text-[#c4cfde] rounded-md px-4 cursor-pointer duration-700 hover:shadow-xl shadow-md">
           CV
         </li>
       </ul>
       <FaBars
         onClick={handleToggle}
-        className="lg:hidden text-[#ff014f] text-[25px] cursor-pointer block mr-4 lg:mr-0"
+        className="lg:hidden text-[#c4cfde] text-[25px] cursor-pointer block mr-4 lg:mr-0"
       />
     </div>
   );
