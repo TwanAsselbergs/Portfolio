@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Navbar from "../common/Navbar/Navbar";
-import Home from "./Home";
+import Navbar from "../common/Navbar/Navbar.jsx";
+// import Home from "./Home";
 import Posts from "./Posts";
 import Single from "./Single";
 
@@ -10,7 +10,7 @@ const Pages = () => {
     <>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        {/* <Route path="/" element={<Home />} /> */}
         <Route path="/posts" element={<Posts />} />
         <Route path="/posts/:id" element={<Single />} />
       </Routes>
