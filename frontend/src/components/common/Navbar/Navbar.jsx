@@ -23,27 +23,29 @@ const Navbar = () => {
           className="h-[55px] w-[55px] lg:h-[70px] lg:w-[70px] cursor-pointer rounded-full object-cover ml-4 lg:ml-0"
           alt="Twan"
         />
-        <div className="absolute left-1/2 -translate-x-1/2 mt-2 bg-white rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out pointer-events-none group-hover:pointer-events-auto">
-          <div className="relative">
-            <div className="absolute left-1/2 transform -translate-x-1/2 -top-1.5 w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-b-8 border-b-white"></div>
-            <ul className="py-1">
-              <li className="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 cursor-pointer">
-                <a
-                  href="https://www.linkedin.com/in/twanasselbergs/"
-                  target="_blank"
-                  rel="noopener noreferrer">
-                  <FaLinkedin className="w-5 h-5" />
-                </a>
-              </li>
-              <li className="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 cursor-pointer">
-                <a
-                  href="https://github.com/TwanAsselbergs"
-                  target="_blank"
-                  rel="noopener noreferrer">
-                  <FaGithub className="w-5 h-5" />
-                </a>
-              </li>
-            </ul>
+        <div className="opacity-0 p-4 pt-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out pointer-events-none group-hover:pointer-events-auto">
+          <div className="absolute left-1/2 -translate-x-1/2 mt-3 bg-white rounded-md">
+            <div className="relative">
+              <div className="absolute left-1/2 transform -translate-x-1/2 -top-1.5 w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-b-8 border-b-white group-hover:pointer-events-auto group-hover:opacity-100"></div>
+              <ul className="py-1">
+                <li className="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 cursor-pointer">
+                  <a
+                    href="https://www.linkedin.com/in/twanasselbergs/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    <FaLinkedin className="w-5 h-5" />
+                  </a>
+                </li>
+                <li className="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 cursor-pointer">
+                  <a
+                    href="https://github.com/TwanAsselbergs"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    <FaGithub className="w-5 h-5" />
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
