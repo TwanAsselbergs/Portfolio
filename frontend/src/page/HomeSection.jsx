@@ -25,18 +25,18 @@ const HomeSection = () => {
             <h6 className="mb-4 text-center lg:text-left text-[14px] tracking-[3px] text-[#c4cfde] uppercase">
               Profiles
             </h6>
-            <div className="flex gap-5 text-[20px]">
+            <div className="flex gap-5">
               <a
                 href="https://www.linkedin.com/in/twanasselbergs/"
                 target="_blank"
                 rel="noopener noreferrer">
-                <FaGithub className="w-[60px] rounded-lg cursor-pointer home-icon-btn h-[60px] p-4 bg-[#24272b] shadow-lg hover:shadow-xl duration-500 hover:bg-[#2e3136]" />
+                <FaLinkedin className="w-[60px] rounded-lg cursor-pointer home-icon-btn h-[60px] p-4 bg-[#24272b] shadow-lg hover:shadow-xl duration-500 hover:bg-[#2e3136]" />
               </a>
               <a
                 href="https://github.com/TwanAsselbergs"
                 target="_blank"
                 rel="noopener noreferrer">
-                <FaLinkedin className="w-[60px] rounded-lg cursor-pointer home-icon-btn h-[60px] p-4 bg-[#24272b] shadow-lg hover:shadow-xl duration-500 hover:bg-[#2e3136]" />
+                <FaGithub className="w-[60px] rounded-lg cursor-pointer home-icon-btn h-[60px] p-4 bg-[#24272b] shadow-lg hover:shadow-xl duration-500 hover:bg-[#2e3136]" />
               </a>
             </div>
           </div>
