@@ -1,12 +1,12 @@
 import React from "react";
-import logo from "./img/homesection/logo.jpeg";
+import logo from "./img/home-section/logo.jpeg";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 const HomeSection = () => {
   return (
     <div
       id="#home"
-      className="border-b border-black mt-0 lg:mt-12 sm:w-[90%] w-[95%] md:w-[85%] lg:w-[90%] flex justify-center items-center flex-col lg:flex-row gap-5 lg:gap-36 mx-auto py-10 duration-500">
+      className="border-b border-black mt-0 lg:mt-12 sm:w-[90%] w-[95%] md:w-[85%] lg:w-[90%] flex justify-center items-center flex-col lg:flex-row gap-5 lg:gap-36 mx-auto py-10 duration-500 pt-24 md:pt-40">
       <div className="lg:w-[45%] mt-10 lg:mt-0 w-full order-2 lg:order-1">
         <h4 className="uppercase tracking-[3px] text-center lg:text-left text-[14px] text-[#c4cfde] mb-4">
           Welcome to my portfolio

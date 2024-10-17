@@ -15,15 +15,15 @@ const Navbar = () => {
   };
 
   return (
-    <div className="lg:w-[95%] z-[99] px-4 lg:px-0 relative flex justify-between items-center mx-auto py-4 lg:py-6">
+    <div className="fixed top-0 w-full z-[99] px-4 flex justify-between items-center mx-auto bg-[#212428]">
       <div className="relative group">
         <img
           src={logo}
           alt="Twan"
-          className="h-[55px] w-[55px] lg:h-[70px] lg:w-[70px] cursor-pointer rounded-full object-cover ml-4 lg:ml-0 border-[#383b40] border-2"
+          className="h-[55px] w-[55px] lg:h-[70px] lg:w-[70px] cursor-pointer rounded-full object-cover mb-4 lg:mb-0 ml-4 lg:ml-24 mt-4 border-[#383b40] border-2"
         />
         <div className="opacity-0 lg:p-4 lg:pt-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out pointer-events-none group-hover:pointer-events-auto">
-          <div className="absolute left-1/2 -translate-x-1/2 mt-3 bg-white rounded-md">
+          <div className="absolute left-[78%] transform -translate-x-1/2 mt-4 bg-white rounded-md">
             <div className="relative">
               <div className="absolute left-1/2 transform -translate-x-1/2 -top-1.5 w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-b-8 border-b-white group-hover:pointer-events-auto group-hover:opacity-100"></div>
               <ul className="py-1">
@@ -49,7 +49,7 @@ const Navbar = () => {
         </div>
       </div>
       <ul
-        className={`hidden lg:flex text-[#c4cfde] justify-start text-[19px] gap-2 items-center font-bold`}>
+        className={`hidden lg:flex text-[#c4cfde] justify-start text-[20px] gap-2 items-center font-bold mr-4 lg:mr-24`}>
         <li className="cursor-pointer duration-200 hover:bg-[#2e3136] p-2 pr-4 pl-4 rounded-md">
           <a href="#home">Home</a>
         </li>
@@ -77,20 +77,22 @@ const Navbar = () => {
               CV
             </p>
           </li>
-          <div className="absolute left-1/2 -translate-x-1/2 mt-1 bg-white rounded-md opacity-0 pointer-events-none group-hover:pointer-events-auto group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
-            <div className="relative group-hover:pointer-events-auto group-hover:opacity-100">
-              <div className="absolute left-1/2 transform -translate-x-1/2 -top-1.5 w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-b-8 border-b-white group-hover:pointer-events-auto group-hover:opacity-100"></div>
-              <ul className="py-1">
-                <li className="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 cursor-pointer">
-                  <a
-                    href="cv/Twan Asselbergs CV.pdf"
-                    download
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    <FaFilePdf className="w-5 h-5" />
-                  </a>
-                </li>
-              </ul>
+          <div className="absolute left-[94%] transform -translate-x-1/2 p-4 pb-0">
+            <div className="left-1/2 transform -translate-x-1/2 mt-5 bg-white rounded-md opacity-0 pointer-events-none group-hover:pointer-events-auto group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+              <div className="relative group-hover:pointer-events-auto group-hover:opacity-100">
+                <div className="absolute left-1/2 transform -translate-x-1/2 -top-1.5 w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-b-8 border-b-white group-hover:pointer-events-auto group-hover:opacity-100"></div>
+                <ul className="py-1">
+                  <li className="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 cursor-pointer">
+                    <a
+                      href="cv/Twan Asselbergs CV.pdf"
+                      download
+                      target="_blank"
+                      rel="noopener noreferrer">
+                      <FaFilePdf className="w-5 h-5" />
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
