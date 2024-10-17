@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import logo from "./img/logo.jpeg";
-import "./style.css";
 import { FaBars, FaLinkedin, FaGithub, FaFilePdf } from "react-icons/fa";
 
 const Navbar = () => {
@@ -16,14 +15,14 @@ const Navbar = () => {
   };
 
   return (
-    <div className="lg:w-[95%] z-[99] px-4 lg:px-0 relative flex justify-between items-center mx-auto py-4 lg:py-6 ">
+    <div className="lg:w-[95%] z-[99] px-4 lg:px-0 relative flex justify-between items-center mx-auto py-4 lg:py-6">
       <div className="relative group">
         <img
           src={logo}
-          className="h-[55px] w-[55px] lg:h-[70px] lg:w-[70px] cursor-pointer rounded-full object-cover ml-4 lg:ml-0"
           alt="Twan"
+          className="h-[55px] w-[55px] lg:h-[70px] lg:w-[70px] cursor-pointer rounded-full object-cover ml-4 lg:ml-0 border-[#383b40] border-2"
         />
-        <div className="opacity-0 p-4 pt-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out pointer-events-none group-hover:pointer-events-auto">
+        <div className="opacity-0 lg:p-4 lg:pt-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out pointer-events-none group-hover:pointer-events-auto">
           <div className="absolute left-1/2 -translate-x-1/2 mt-3 bg-white rounded-md">
             <div className="relative">
               <div className="absolute left-1/2 transform -translate-x-1/2 -top-1.5 w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-b-8 border-b-white group-hover:pointer-events-auto group-hover:opacity-100"></div>
@@ -78,7 +77,7 @@ const Navbar = () => {
               CV
             </p>
           </li>
-          <div className="absolute left-1/2 -translate-x-1/2 mt-1.5 bg-white rounded-md opacity-0 pointer-events-none group-hover:pointer-events-auto group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+          <div className="absolute left-1/2 -translate-x-1/2 mt-1 bg-white rounded-md opacity-0 pointer-events-none group-hover:pointer-events-auto group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
             <div className="relative group-hover:pointer-events-auto group-hover:opacity-100">
               <div className="absolute left-1/2 transform -translate-x-1/2 -top-1.5 w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-b-8 border-b-white group-hover:pointer-events-auto group-hover:opacity-100"></div>
               <ul className="py-1">
