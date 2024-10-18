@@ -4,23 +4,33 @@ import { FaBars, FaLinkedin, FaGithub, FaFilePdf } from "react-icons/fa";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [cvDropdownOpen, setCvDropdownOpen] = useState(false);
+  const [logoDropdownOpen, setLogoDropdownOpen] = useState(false);
 
   const handleToggle = () => {
     setToggle(!toggle);
   };
 
-  const handleDropdownToggle = () => {
-    setDropdownOpen(!dropdownOpen);
+  const handleCvDropdown = () => {
+    setCvDropdownOpen(!cvDropdownOpen);
+  };
+
+  const handleLogoDropdown = () => {
+    setLogoDropdownOpen(!logoDropdownOpen);
   };
 
   return (
-    <div className="fixed top-0 w-full z-[99] px-4 flex justify-between items-center mx-auto bg-[#212428]">
-      <div className="relative group">
+    <div className="fixed top-0 w-full z-[99] px-4 flex justify-between items-center mx-auto bg-[#212428] duration-500 ease-in-out">
+      <div
+        className="relative group"
+        onMouseEnter={handleLogoDropdown}
+        onMouseLeave={handleLogoDropdown}>
         <img
           src={logo}
           alt="Twan"
-          className="h-[55px] w-[55px] lg:h-[70px] lg:w-[70px] cursor-pointer rounded-full object-cover mb-4 lg:mb-0 ml-4 lg:ml-24 mt-4 border-[#383b40] border-2"
+          className={`h-[55px] w-[55px] lg:h-[70px] lg:w-[70px] cursor-pointer rounded-full object-cover mb-4 lg:mb-0 ml-4 lg:ml-24 mt-4 border-2 duration-500 ease-in-out ${
+            logoDropdownOpen ? "border-[#c4cfde]" : "border-[#383b40]"
+          }`}
         />
         <div className="hidden md:block">
           <div className="opacity-0 lg:p-4 lg:pt-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out pointer-events-none group-hover:pointer-events-auto">
@@ -66,12 +76,12 @@ const Navbar = () => {
         </li>
         <div
           className="relative group"
-          onMouseEnter={handleDropdownToggle}
-          onMouseLeave={handleDropdownToggle}>
+          onMouseEnter={handleCvDropdown}
+          onMouseLeave={handleCvDropdown}>
           <li className="text-[#c4cfde] rounded-md px-4 cursor-pointer duration-500">
             <p
               className={`transition-colors duration-500 ease-in-out ${
-                dropdownOpen ? "text-[#2e3136]" : ""
+                cvDropdownOpen ? "text-[#2e3136]" : ""
               }`}>
               CV
             </p>
@@ -96,7 +106,7 @@ const Navbar = () => {
           </div>
         </div>
       </ul>
-      {/* Mobile Device */}
+      {/* Mobile */}
       <div
         className={`fixed inset-0 bg-black bg-opacity-30 z-40 transition-opacity duration-500 ${
           toggle ? "opacity-100" : "opacity-0 pointer-events-none"
