@@ -13,7 +13,7 @@ const HomeSection = () => {
         </h4>
         <h1 className="text-[35px] sm:text-[45px] md:text-[50px] lg:text-[55px] text-center lg:text-left xl:text-[60px] mb-4 leading-[50px] lg:leading-[65px] xl:leading-[75px] text-white font-bold">
           Hi, I’m <span className="text-[#c4cfde]">Twan Asselbergs</span>
-          <span> a Developer.</span>
+          <span> a Student.</span>
         </h1>
         <p className="text-[#c4cfde] text-center lg:text-left leading-[30px] pr-0 md:pr-6">
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque nobis

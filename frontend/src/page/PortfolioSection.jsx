@@ -55,7 +55,7 @@ const PortfolioSection = () => {
             key={post.id}
             onClick={() => openModal(post)}
             className="min-w-[65%] md:min-w-[30%] mb-7 md:mb-0 w-full home-icon-btn rounded-lg flex justify-center items-center flex-col cursor-pointer px-6 md:px-8 py-4 hover:bg-[#2e3136] drop-shadow-2xl hover:drop-shadow-md duration-500">
-            <div className="w-full mb-1 portfolio-img rounded-xl pt-4">
+            <div className="w-full mb-1 portfolio-img pt-4">
               <img
                 src={post.featured_image_url}
                 alt={post.title.rendered}
@@ -74,8 +74,8 @@ const PortfolioSection = () => {
       {selectedPort && (
         <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-30 flex items-center justify-center z-[9999]">
           <div ref={modalRef} className="bg-[#212428] w-5/6 rounded-lg">
-            <div className="w-[100%] h-[450px] md:h-auto relative md:flex-row flex-col justify-center md:gap-[5%] port-click-overlay-bg md:px-8 py-8 md:py-14 items-center flex rounded-xl">
-              <div className="xl:w-[45%] w[90%] sm:w-[60%] md:w-[50] md:mb-0 lg:w-[60%] rounded-xl overflow-hidden">
+            <div className="w-[100%] h-[450px] md:h-auto relative md:flex-row flex-col justify-center md:gap-[5%] port-click-overlay-bg md:px-8 py-8 md:py-14 items-center flex rounded-lg">
+              <div className="xl:w-[45%] w[90%] sm:w-[60%] md:w-[50] md:mb-0 lg:w-[60%] rounded-lg overflow-hidden">
                 <img
                   src={selectedPort.featured_image_url}
                   alt={selectedPort.title.rendered}

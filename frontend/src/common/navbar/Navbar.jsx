@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import logo from "./img/logo.jpeg";
 import { FaBars, FaLinkedin, FaGithub, FaFilePdf } from "react-icons/fa";
 
@@ -6,6 +6,7 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   const [cvDropdownOpen, setCvDropdownOpen] = useState(false);
   const [logoDropdownOpen, setLogoDropdownOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const handleToggle = () => {
     setToggle(!toggle);
@@ -19,8 +20,25 @@ const Navbar = () => {
     setLogoDropdownOpen(!logoDropdownOpen);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 75) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <div className="fixed top-0 w-full z-[99] px-4 flex justify-between items-center mx-auto bg-[#212428] duration-500 ease-in-out">
+    <div
+      className={`fixed top-0 w-full z-[99] px-4 flex justify-between items-center mx-auto bg-[#212428] duration-500 ease-in-out ${
+        isScrolled ? "h-20 lg:h-24 shadow-lg" : "h-24 lg:h-28"
+      }`}>
       <div
         className="relative group"
         onMouseEnter={handleLogoDropdown}
@@ -28,13 +46,17 @@ const Navbar = () => {
         <img
           src={logo}
           alt="Twan"
-          className={`h-[55px] w-[55px] lg:h-[70px] lg:w-[70px] cursor-pointer rounded-full object-cover mb-4 lg:mb-0 ml-4 lg:ml-24 mt-4 border-2 duration-500 ease-in-out ${
+          className={`${
+            isScrolled
+              ? "h-[55px] w-[55px] lg:h-[70px] lg:w-[70px]"
+              : "h-[55px] w-[55px] lg:h-[70px] lg:w-[70px]"
+          } cursor-pointer rounded-full object-cover mb-4 lg:mb-0 ml-4 lg:ml-24 mt-4 border-2 duration-500 ease-in-out ${
             logoDropdownOpen ? "border-[#c4cfde]" : "border-[#383b40]"
           }`}
         />
         <div className="hidden md:block">
           <div className="opacity-0 lg:p-4 lg:pt-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out pointer-events-none group-hover:pointer-events-auto">
-            <div className="absolute left-[78%] transform -translate-x-1/2 mt-4 bg-white rounded-md">
+            <div className="absolute left-[78%] transform -translate-x-1/2 mt-3 bg-white rounded-lg">
               <div className="relative">
                 <div className="absolute left-1/2 transform -translate-x-1/2 -top-1.5 w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-b-8 border-b-white group-hover:pointer-events-auto group-hover:opacity-100"></div>
                 <ul className="py-1">
@@ -62,23 +84,23 @@ const Navbar = () => {
       </div>
       <ul
         className={`hidden lg:flex text-[#c4cfde] justify-start text-[20px] gap-2 items-center font-bold mr-4 lg:mr-24`}>
-        <li className="cursor-pointer duration-500 hover:bg-[#2e3136] p-2 pr-4 pl-4 rounded-md">
+        <li className="cursor-pointer duration-500 hover:bg-[#2e3136] p-2 pr-4 pl-4 rounded-lg">
           <a href="#home">Home</a>
         </li>
-        <li className="cursor-pointer duration-500 hover:bg-[#2e3136] p-2 pr-4 pl-4 rounded-md">
+        <li className="cursor-pointer duration-500 hover:bg-[#2e3136] p-2 pr-4 pl-4 rounded-lg">
           <a href="#portfolio">Portfolio</a>
         </li>
-        <li className="cursor-pointer duration-500 hover:bg-[#2e3136] p-2 pr-4 pl-4 rounded-md">
+        <li className="cursor-pointer duration-500 hover:bg-[#2e3136] p-2 pr-4 pl-4 rounded-lg">
           <a href="#resume">Resume</a>
         </li>
-        <li className="cursor-pointer duration-500 hover:bg-[#2e3136] p-2 pr-4 pl-4 rounded-md">
+        <li className="cursor-pointer duration-500 hover:bg-[#2e3136] p-2 pr-4 pl-4 rounded-lg">
           <a href="#contact">Contact</a>
         </li>
         <div
           className="relative group"
           onMouseEnter={handleCvDropdown}
           onMouseLeave={handleCvDropdown}>
-          <li className="text-[#c4cfde] rounded-md px-4 cursor-pointer duration-500">
+          <li className="text-[#c4cfde] rounded-lg px-4 cursor-pointer duration-500">
             <p
               className={`transition-colors duration-500 ease-in-out ${
                 cvDropdownOpen ? "text-[#2e3136]" : ""
@@ -87,7 +109,7 @@ const Navbar = () => {
             </p>
           </li>
           <div className="absolute left-[94%] transform -translate-x-1/2 p-4 pb-0">
-            <div className="left-1/2 transform -translate-x-1/2 mt-5 bg-white rounded-md opacity-0 pointer-events-none group-hover:pointer-events-auto group-hover:opacity-100 transition-opacity duration-500 ease-in-out">
+            <div className="left-1/2 transform -translate-x-1/2 mt-4 bg-white rounded-lg opacity-0 pointer-events-none group-hover:pointer-events-auto group-hover:opacity-100 transition-opacity duration-500 ease-in-out">
               <div className="relative group-hover:pointer-events-auto group-hover:opacity-100">
                 <div className="absolute left-1/2 transform -translate-x-1/2 -top-1.5 w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-b-8 border-b-white group-hover:pointer-events-auto group-hover:opacity-100"></div>
                 <ul className="py-1">
@@ -118,27 +140,27 @@ const Navbar = () => {
         } flex flex-col text-[13px] gap-6 items-center pt-10 border-l border-[#2e3136]`}>
         <li
           onClick={handleToggle}
-          className="cursor-pointer duration-500 hover:bg-[#2e3136] p-2 pr-4 pl-4 rounded-md mt-8">
+          className="cursor-pointer duration-500 hover:bg-[#2e3136] p-2 pr-4 pl-4 rounded-lg mt-8">
           <a href="#home">Home</a>
         </li>
         <li
           onClick={handleToggle}
-          className="cursor-pointer duration-500 hover:bg-[#2e3136] p-2 pr-4 pl-4 rounded-md">
+          className="cursor-pointer duration-500 hover:bg-[#2e3136] p-2 pr-4 pl-4 rounded-lg">
           <a href="#portfolio">Portfolio</a>
         </li>
         <li
           onClick={handleToggle}
-          className="cursor-pointer duration-500 hover:bg-[#2e3136] p-2 pr-4 pl-4 rounded-md">
+          className="cursor-pointer duration-500 hover:bg-[#2e3136] p-2 pr-4 pl-4 rounded-lg">
           <a href="#resume">Resume</a>
         </li>
         <li
           onClick={handleToggle}
-          className="cursor-pointer duration-500 hover:bg-[#2e3136] p-2 pr-4 pl-4 rounded-md">
+          className="cursor-pointer duration-500 hover:bg-[#2e3136] p-2 pr-4 pl-4 rounded-lg">
           <a href="#contact">Contact</a>
         </li>
         <li
           onClick={handleToggle}
-          className="cursor-pointer duration-500 hover:bg-[#2e3136] p-2 pr-4 pl-4 rounded-md">
+          className="cursor-pointer duration-500 hover:bg-[#2e3136] p-2 pr-4 pl-4 rounded-lg">
           <a
             href="cv/Twan Asselbergs CV.pdf"
             download
