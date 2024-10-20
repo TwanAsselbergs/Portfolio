@@ -44,12 +44,12 @@ const ProjectsSection = () => {
       <h1 className="text-[#c4cfde] text-[34px] md:text-[40px] lg:text-[60px] my-2 text-center font-bold">
         Projects
       </h1>
-      <div className="w-full my-8 flex gap-6 overflow-x-auto pb-8">
+      <div className="w-full my-8 flex gap-2 md:gap-6 overflow-x-auto pb-8">
         {posts.map((post) => (
           <div
             key={post.id}
             onClick={() => openModal(post)}
-            className="min-w-[65%] md:min-w-[45%] mb-7 md:mb-0 w-full home-icon-btn rounded-lg flex justify-center items-center flex-col cursor-pointer px-6 md:px-8 py-4 hover:bg-[#2e3136] drop-shadow-2xl hover:drop-shadow-md duration-500">
+            className="min-w-[80%] md:min-w-[45%] mb-7 md:mb-0 w-full home-icon-btn rounded-lg flex justify-center items-center flex-col cursor-pointer px-6 md:px-8 py-4 hover:bg-[#2e3136] drop-shadow-2xl hover:drop-shadow-md duration-500">
             <div className="w-full mb-1 pt-4">
               <img
                 src={post.featured_image_url}
@@ -58,7 +58,7 @@ const ProjectsSection = () => {
               />
             </div>
             <div className="w-full flex px-1 my-3 justify-between">
-              <p className="text-[#c4cfde] text-[24px] font-bold">
+              <p className="text-[#c4cfde] text-[24px] font-bold max-h-12 overflow-hidden text-ellipsis whitespace-nowrap">
                 {post.title.rendered}
               </p>
             </div>
