@@ -40,11 +40,11 @@ const ProjectsSection = () => {
   };
 
   return (
-    <div id="projects" className="w-[90%] md:w-[90%] py-20 mx-auto">
+    <div id="projects" className="w-[90%] py-20 mx-auto">
       <h1 className="text-[#c4cfde] text-[34px] md:text-[40px] lg:text-[60px] my-2 text-center font-bold">
         Projects
       </h1>
-      <div className="w-full my-8 flex gap-2 md:gap-6 overflow-x-auto pb-8">
+      <div className="w-full my-8 flex gap-2 md:gap-6 overflow-x-auto md:pb-8">
         {posts.map((post) => (
           <div
             key={post.id}
