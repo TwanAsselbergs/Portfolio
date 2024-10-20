@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 
-const PortfolioSection = () => {
+const ProjectsSection = () => {
   const [selectedPort, setSelectedPort] = useState(null);
   const [posts, setPosts] = useState([]);
   const modalRef = useRef(null);
@@ -22,15 +22,12 @@ const PortfolioSection = () => {
 
     if (selectedPort) {
       document.addEventListener("mousedown", handleClickOutside);
-      document.body.classList.add("overflow-hidden");
     } else {
       document.removeEventListener("mousedown", handleClickOutside);
-      document.body.classList.remove("overflow-hidden");
     }
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
-      document.body.classList.remove("overflow-hidden");
     };
   }, [selectedPort]);
 
@@ -43,23 +40,21 @@ const PortfolioSection = () => {
   };
 
   return (
-    <div
-      id="portfolio"
-      className="w-[90%] md:w-[90%] border-b border-black py-20 mx-auto">
+    <div id="projects" className="w-[90%] md:w-[90%] py-20 mx-auto">
       <h1 className="text-[#c4cfde] text-[34px] md:text-[40px] lg:text-[60px] my-2 text-center font-bold">
-        Portfolio
+        Projects
       </h1>
       <div className="w-full my-8 flex gap-6 overflow-x-auto pb-8">
         {posts.map((post) => (
           <div
             key={post.id}
             onClick={() => openModal(post)}
-            className="min-w-[65%] md:min-w-[30%] mb-7 md:mb-0 w-full home-icon-btn rounded-lg flex justify-center items-center flex-col cursor-pointer px-6 md:px-8 py-4 hover:bg-[#2e3136] drop-shadow-2xl hover:drop-shadow-md duration-500">
-            <div className="w-full mb-1 portfolio-img pt-4">
+            className="min-w-[65%] md:min-w-[45%] mb-7 md:mb-0 w-full home-icon-btn rounded-lg flex justify-center items-center flex-col cursor-pointer px-6 md:px-8 py-4 hover:bg-[#2e3136] drop-shadow-2xl hover:drop-shadow-md duration-500">
+            <div className="w-full mb-1 pt-4">
               <img
                 src={post.featured_image_url}
                 alt={post.title.rendered}
-                className="w-full h-40 md:h-96 rounded-lg object-cover"
+                className="w-full h-40 md:h-96 rounded-lg object-cover shadow-2xl"
               />
             </div>
             <div className="w-full flex px-1 my-3 justify-between">
@@ -70,12 +65,11 @@ const PortfolioSection = () => {
           </div>
         ))}
       </div>
-
       {selectedPort && (
         <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-30 flex items-center justify-center z-[9999]">
           <div ref={modalRef} className="bg-[#212428] w-5/6 rounded-lg">
             <div className="w-[100%] h-[450px] md:h-auto relative md:flex-row flex-col justify-center md:gap-[5%] port-click-overlay-bg md:px-8 py-8 md:py-14 items-center flex rounded-lg">
-              <div className="xl:w-[45%] w[90%] sm:w-[60%] md:w-[50] md:mb-0 lg:w-[60%] rounded-lg overflow-hidden">
+              <div className="xl:w-[45%] w[90%] sm:w-[60%] md:w-[50] md:mb-0 lg:w-[60%] rounded-lg overflow-hidden shadow-2xl">
                 <img
                   src={selectedPort.featured_image_url}
                   alt={selectedPort.title.rendered}
@@ -98,4 +92,4 @@ const PortfolioSection = () => {
   );
 };
 
-export default PortfolioSection;
+export default ProjectsSection;

@@ -1,14 +1,14 @@
 import React from "react";
 import Navbar from "./common/navbar/Navbar";
 import HomeSection from "./page/HomeSection";
-import PortfolioSection from "./page/PortfolioSection";
+import ProjectsSection from "./page/ProjectsSection";
 
 const App = () => {
   return (
     <>
       <Navbar />
       <HomeSection />
-      <PortfolioSection />
+      <ProjectsSection />
     </>
   );
 };
