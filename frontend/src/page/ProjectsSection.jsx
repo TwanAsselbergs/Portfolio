@@ -77,7 +77,7 @@ const ProjectsSection = () => {
                 />
               </div>
               <div className="xl:w-[45%] w-[90%] sm:w-[70%] md:w-[50%] lg:w-[40%] h-96 overflow-hidden flex flex-col justify-center">
-                <h5 className="text-[#c4cfde] text-[34px] mt-4 md:mt-12 font-semibold text-center md:text-left">
+                <h5 className="text-[#c4cfde] text-[34px] mt-4 md:mt-12 font-semibold text-center md:text-left whitespace-nowrap overflow-x-auto min-h-14">
                   {selectedPort.title.rendered}
                 </h5>
                 <h1 className="h-80 mt-4 text-[15px] md:text-[18px] text-[#c4cfde] text-center md:text-left pl-2 pr-2 md:pl-0 md:pr-0 overflow-y-auto">
