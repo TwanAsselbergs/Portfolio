@@ -91,7 +91,7 @@ const Navbar = () => {
           <a href="#projects">Projects</a>
         </li>
         <li className="cursor-pointer duration-500 hover:bg-[#2e3136] p-2 pr-4 pl-4 rounded-lg">
-          <a href="#resume">Resume</a>
+          <a href="#skills">Skills</a>
         </li>
         <li className="cursor-pointer duration-500 hover:bg-[#2e3136] p-2 pr-4 pl-4 rounded-lg">
           <a href="#contact">Contact</a>
@@ -151,7 +151,7 @@ const Navbar = () => {
         <li
           onClick={handleToggle}
           className="cursor-pointer duration-500 hover:bg-[#2e3136] p-2 pr-4 pl-4 rounded-lg">
-          <a href="#resume">Resume</a>
+          <a href="#skills">Skills</a>
         </li>
         <li
           onClick={handleToggle}

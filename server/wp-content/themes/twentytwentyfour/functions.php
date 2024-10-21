@@ -218,3 +218,14 @@ function add_featured_image_to_rest_api() {
 }
 
 add_action('rest_api_init', 'add_featured_image_to_rest_api');
+
+function add_custom_fields_to_rest_api() {
+    register_rest_field('post', 'icons', array(
+        'get_callback' => function($post) {
+            $icons = get_post_meta($post['id'], 'icons', true);
+            return json_decode($icons);
+        },
+        'schema' => null,
+    ));
+}
+add_action('rest_api_init', 'add_custom_fields_to_rest_api');

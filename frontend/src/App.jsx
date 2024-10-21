@@ -3,6 +3,7 @@ import Navbar from "./common/navbar/Navbar";
 import HomeSection from "./page/HomeSection";
 import ProjectsSection from "./page/ProjectsSection";
 import ContactSection from "./page/ContactSection";
+import SkillsSection from "./page/SkillsSection";
 
 const App = () => {
   return (
@@ -10,6 +11,7 @@ const App = () => {
       <Navbar />
       <HomeSection />
       <ProjectsSection />
+      <SkillsSection />
       <ContactSection />
     </>
   );
