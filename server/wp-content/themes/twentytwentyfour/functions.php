@@ -228,4 +228,5 @@ function add_custom_fields_to_rest_api() {
         'schema' => null,
     ));
 }
+
 add_action('rest_api_init', 'add_custom_fields_to_rest_api');

@@ -50,7 +50,7 @@ const ProjectsSection = () => {
       <h1 className="text-[#c4cfde] text-[34px] md:text-[40px] lg:text-[60px] my-2 text-center font-bold">
         Projects
       </h1>
-      <div className="w-full my-8 flex gap-2 md:gap-6 overflow-x-auto pb-0 md:pb-8">
+      <div className="w-full my-8 flex gap-2 md:gap-6 overflow-x-auto pb-0 md:pb-8 scrollbar-none">
         {posts.map((post) => (
           <div
             key={post.id}
@@ -72,7 +72,7 @@ const ProjectsSection = () => {
         ))}
       </div>
       {selectedPort && (
-        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-30 flex items-center justify-center z-[9999]">
+        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-[9999] bg-black bg-opacity-30 transition-opacity duration-500 ">
           <div
             ref={modalRef}
             className={`bg-[#212428] w-5/6 rounded-lg ${
@@ -86,7 +86,7 @@ const ProjectsSection = () => {
                   className="w-64 h-96 md:w-full md:h-96 object-cover"
                 />
               </div>
-              <div className="xl:w-[45%] w-[90%] sm:w-[70%] md:w-[50%] lg:w-[40%] h-96 overflow-hidden flex flex-col justify-center">
+              <div className="xl:w-[45%] w-[90%] sm:w-[70%] md:w-[50%] lg:w-[40%] h-96 overflow-hidden flex flex-col justify-center scrollbar-none">
                 <div className="flex flex-wrap items-center justify-center md:justify-start mt-3 md:mt-10 md:-ml-2">
                   {selectedPort.icons &&
                     selectedPort.icons.map((icon, index) => (
@@ -94,7 +94,7 @@ const ProjectsSection = () => {
                         key={index}
                         src={icon}
                         alt={`icon-${index}`}
-                        className="w-[38px] h-[38px] md:w-[43px] md:h-[43px] bg-[#2e3136] hover:bg-[#32363b] duration-500 cursor-pointer p-2.5 rounded-2xl ml-2 object-contain"
+                        className="w-[38px] h-[38px] md:w-[43px] md:h-[43px] bg-[#2e3136] hover:bg-[#32363b] duration-500 cursor-pointer p-2.5 rounded-full ml-2 object-contain"
                       />
                     ))}
                 </div>
