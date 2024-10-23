@@ -38,6 +38,14 @@ const SkillsSection = () => {
       src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
       alt: "Tailwind",
     },
+    {
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/wordpress/wordpress-plain.svg",
+      alt: "WordPress",
+    },
+    {
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg",
+      alt: "GitHub",
+    },
   ];
 
   const shuffleArray = (array) => {
@@ -51,18 +59,18 @@ const SkillsSection = () => {
   const shuffledSkills = shuffleArray([...skills]);
 
   return (
-    <div id="skills" className="w-[90%] md:pt-20 mx-auto">
-      <h1 className="text-[#c4cfde] text-[34px] md:text-[40px] lg:text-[60px] my-2 text-center font-bold">
+    <div id="skills" className="w-[90%] pt-14 md:pt-0 mx-auto">
+      <h1 className="text-[#c4cfde] text-[34px] md:text-[40px] lg:text-[60px] text-center font-bold mt-20 md:mt-4">
         Skills
       </h1>
-      <div className="flex flex-col gap-4 justify-center mx-auto w-full md:w-1/2 rounded-full overflow-hidden pt-8 md:pt-20">
+      <div className="flex flex-col gap-4 justify-center mx-auto w-[40%] md:w-1/2 overflow-hidden pt-8 md:pt-20">
         <div className="flex gap-4 animate-scroll">
           {shuffledSkills.concat(shuffledSkills).map((skill, index) => (
             <img
               key={index}
               src={skill.src}
               alt={skill.alt}
-              className="w-12 h-12 md:w-16 md:h-16 bg-[#2e3136] hover:bg-[#32363b] cursor-pointer rounded-full p-3"
+              className="w-12 h-12 md:w-16 md:h-16 bg-[#2e3136] hover:bg-[#32363b] cursor-pointer rounded-full p-3 duration-500"
             />
           ))}
         </div>

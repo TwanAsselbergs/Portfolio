@@ -55,12 +55,12 @@ const ProjectsSection = () => {
           <div
             key={post.id}
             onClick={() => openModal(post)}
-            className="min-w-[85%] md:min-w-[45%] mb-7 md:mb-0 w-full home-icon-btn rounded-lg flex justify-center items-center flex-col cursor-pointer px-6 md:px-8 py-4 hover:bg-[#2e3136] drop-shadow-2xl hover:drop-shadow-md duration-500">
+            className="min-w-[85%] md:min-w-[45%] mb-7 md:mb-0 w-full home-icon-btn rounded-xl flex justify-center items-center flex-col cursor-pointer px-6 md:px-8 py-4 hover:bg-[#2e3136] drop-shadow-2xl hover:drop-shadow-md duration-500">
             <div className="w-full mb-1 pt-0 md:pt-4">
               <img
                 src={post.featured_image_url}
                 alt={post.title.rendered}
-                className="w-full h-56 md:h-96 rounded-lg object-cover shadow-2xl"
+                className="w-full h-56 md:h-96 rounded-xl object-cover shadow-2xl hover:scale-[101%] duration-500"
               />
             </div>
             <div className="w-full flex px-1 my-3 justify-between">
@@ -72,14 +72,14 @@ const ProjectsSection = () => {
         ))}
       </div>
       {selectedPort && (
-        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-[9999] bg-black bg-opacity-30 transition-opacity duration-500 ">
+        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-[9999] bg-black bg-opacity-30 transition-opacity duration-500">
           <div
             ref={modalRef}
-            className={`bg-[#212428] w-5/6 rounded-lg ${
+            className={`bg-[#212428] w-5/6 rounded-xl ${
               isClosing ? "animate-slide-down" : "animate-slide-up"
             }`}>
-            <div className="w-[100%] h-[450px] md:h-auto relative md:flex-row flex-col justify-center md:gap-[5%] port-click-overlay-bg md:px-8 py-8 md:py-14 items-center flex rounded-lg">
-              <div className="xl:w-[45%] w[90%] sm:w-[60%] md:w-[50] md:mb-0 lg:w-[60%] rounded-lg overflow-hidden shadow-2xl">
+            <div className="w-[100%] h-[450px] md:h-auto relative md:flex-row flex-col justify-center md:gap-[5%] port-click-overlay-bg md:px-8 py-8 md:py-14 items-center flex rounded-xl">
+              <div className="xl:w-[45%] w[90%] sm:w-[60%] md:w-[50] md:mb-0 lg:w-[60%] rounded-xl overflow-hidden shadow-2xl">
                 <img
                   src={selectedPort.featured_image_url}
                   alt={selectedPort.title.rendered}

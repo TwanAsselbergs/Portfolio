@@ -2,7 +2,7 @@ import React from "react";
 
 const ContactSection = () => {
   return (
-    <div id="contact" className="w-[90%] pt-20 md:pt-36 mx-auto">
+    <div id="contact" className="w-[90%] pt-14 md:pt-36 mx-auto">
       <h1 className="text-[#c4cfde] text-[34px] md:text-[40px] lg:text-[60px] my-2 text-center font-bold">
         Contact
       </h1>
@@ -10,24 +10,37 @@ const ContactSection = () => {
         method="POST"
         action="mailto: twanasselbergs@outlook.com"
         className="flex justify-center items-center mx-auto flex-col my-8">
-        <div className="mb-4">
+        <div className="relative mb-4">
           <input
             type="text"
-            placeholder="Name"
-            className="px-3 py-2 rounded-lg"
+            id="name"
+            className="pl-3 pr-20 pt-5 pb-4 rounded-xl bg-[#2e3136] hover:bg-[#32363b] outline-none w-full peer text-[#c4cfde] duration-500"
+            placeholder=" "
             required
           />
+          <label
+            htmlFor="name"
+            className="absolute left-3 top-4 text-gray-500 peer-focus:top-[0px] peer-focus:left-[10px] peer-focus:text-sm transition-all duration-200 ease-in-out font-semibold">
+            Name
+          </label>
         </div>
-        <div className="mb-4">
+        <div className="relative mb-4">
           <input
             type="email"
-            placeholder="E-mail"
-            className="px-3 py-2 rounded-lg"
-            required
+            id="email"
+            className="pl-3 pr-20 pt-5 pb-4 rounded-xl bg-[#2e3136] hover:bg-[#32363b] outline-none w-full peer text-[#c4cfde] duration-500"
+            placeholder=" "
           />
+          <label
+            htmlFor="email"
+            className="absolute left-3 top-4 text-gray-500 peer-focus:top-[0px] peer-focus:left-[10px] peer-focus:text-sm transition-all duration-200 ease-in-out font-semibold">
+            Email
+          </label>
         </div>
         <div className="">
-          <button type="submit" className="">
+          <button
+            type="submit"
+            className="px-24 py-5 rounded-xl bg-[#2e3136] hover:bg-[#32363b] border-none outline-none w-full peer text-gray-500 font-semibold">
             Submit
           </button>
         </div>
