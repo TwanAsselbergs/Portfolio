@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import classNames from "classnames";
+import { FaLinkedin } from "react-icons/fa";
+import { CiMail } from "react-icons/ci";
 
 const ContactSection = () => {
   const [isTitleVisible, setIsTitleVisible] = useState(false);
@@ -33,7 +35,7 @@ const ContactSection = () => {
   }, []);
 
   return (
-    <div id="contact" className="w-[90%] pt-14 md:pt-36 mx-auto">
+    <div id="contact" className="w-[90%] mx-auto">
       <h1
         ref={titleRef}
         className={classNames(
@@ -45,45 +47,20 @@ const ContactSection = () => {
         )}>
         Contact
       </h1>
-      <form
-        method="POST"
-        action="mailto: twanasselbergs@outlook.com"
-        className="flex justify-center items-center mx-auto flex-col my-8">
-        <div className="relative mb-4">
-          <input
-            type="text"
-            id="name"
-            className="pl-3 pr-20 pt-5 pb-4 rounded-xl bg-[#2e3136] hover:bg-[#32363b] outline-none w-full peer text-[#c4cfde] duration-500"
-            placeholder=" "
-            required
-          />
-          <label
-            htmlFor="name"
-            className="absolute left-3 top-4 text-gray-500 peer-focus:top-[0px] peer-focus:left-[10px] peer-focus:text-sm transition-all duration-200 ease-in-out font-semibold">
-            Name
-          </label>
-        </div>
-        <div className="relative mb-4">
-          <input
-            type="email"
-            id="email"
-            className="pl-3 pr-20 pt-5 pb-4 rounded-xl bg-[#2e3136] hover:bg-[#32363b] outline-none w-full peer text-[#c4cfde] duration-500"
-            placeholder=" "
-          />
-          <label
-            htmlFor="email"
-            className="absolute left-3 top-4 text-gray-500 peer-focus:top-[0px] peer-focus:left-[10px] peer-focus:text-sm transition-all duration-200 ease-in-out font-semibold">
-            Email
-          </label>
-        </div>
-        <div className="">
-          <button
-            type="submit"
-            className="px-24 py-5 rounded-xl bg-[#2e3136] hover:bg-[#32363b] border-none outline-none w-full peer text-gray-500 font-semibold">
-            Submit
-          </button>
-        </div>
-      </form>
+      <div className="flex justify-center gap-5 mt-4">
+        <a
+          href="mailto:twanasselbergs@outlook.com"
+          target="_blank"
+          rel="noopener noreferrer">
+          <CiMail className="w-[60px] rounded-xl cursor-pointer h-[60px] p-4 text-gray-700 bg-[#24272b] shadow-lg hover:shadow-xl duration-500 hover:bg-[#2e3136]" />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/twanasselbergs/"
+          target="_blank"
+          rel="noopener noreferrer">
+          <FaLinkedin className="w-[60px] rounded-xl cursor-pointer h-[60px] p-4 text-gray-700 bg-[#24272b] shadow-lg hover:shadow-xl duration-500 hover:bg-[#2e3136]" />
+        </a>
+      </div>
     </div>
   );
 };
