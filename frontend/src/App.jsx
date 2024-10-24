@@ -18,7 +18,7 @@ const App = () => {
           <ProjectsSection />
         </section>
         <section className="snap-start snap-always h-screen flex justify-center items-center">
-          <div className="flex flex-col md:flex-row items-center mt-0 md:mt-[-7.5%]">
+          <div className="flex flex-col md:flex-row items-center mt-0 md:mt-[-7.5%] w-full">
             <SkillsSection />
             <ContactSection />
           </div>

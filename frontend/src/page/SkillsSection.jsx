@@ -102,7 +102,7 @@ const SkillsSection = () => {
         )}>
         Skills
       </h1>
-      <div className="flex flex-col gap-4 justify-center mx-auto w-[40%] md:w-3/4 overflow-hidden pt-8 md:pt-7">
+      <div className="flex flex-col gap-4 justify-center mx-auto w-[80%] md:w-3/4 overflow-hidden pt-8 md:pt-7">
         <div className="flex gap-4 animate-scroll">
           {shuffledSkills.concat(shuffledSkills).map((skill, index) => (
             <img
