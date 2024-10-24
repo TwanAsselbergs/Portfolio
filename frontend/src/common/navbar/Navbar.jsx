@@ -7,6 +7,7 @@ const Navbar = () => {
   const [cvDropdownOpen, setCvDropdownOpen] = useState(false);
   const [logoDropdownOpen, setLogoDropdownOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [currentSection, setCurrentSection] = useState("home");
 
   const handleToggle = () => {
     setToggle(!toggle);
@@ -20,18 +21,30 @@ const Navbar = () => {
     setLogoDropdownOpen(!logoDropdownOpen);
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollContainer = document.querySelector(".snap-y");
-      if (scrollContainer.scrollTop > 300) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
+  const handleScroll = () => {
+    const scrollContainer = document.querySelector(".snap-y");
+    if (scrollContainer.scrollTop > 300) {
+      setIsScrolled(true);
+    } else {
+      setIsScrolled(false);
+    }
 
+    const sections = document.querySelectorAll("section");
+    sections.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (
+        rect.top <= window.innerHeight / 2 &&
+        rect.bottom >= window.innerHeight / 2
+      ) {
+        setCurrentSection(section.id);
+      }
+    });
+  };
+
+  useEffect(() => {
     const scrollContainer = document.querySelector(".snap-y");
     scrollContainer.addEventListener("scroll", handleScroll);
+    handleScroll();
     return () => {
       scrollContainer.removeEventListener("scroll", handleScroll);
     };
@@ -87,17 +100,23 @@ const Navbar = () => {
       </div>
       <ul
         className={`hidden lg:flex text-[#c4cfde] justify-start text-[20px] gap-2 items-center font-bold mr-4 lg:mr-24`}>
-        <li className="cursor-pointer duration-500 hover:bg-[#2e3136] p-2 pr-4 pl-4 rounded-xl">
+        <li
+          className={`cursor-pointer duration-500 hover:bg-[#2e3136] p-2 pr-4 pl-4 rounded-xl ${
+            currentSection === "home" ? "bg-[#2e3136]" : ""
+          }`}>
           <a href="#home">Home</a>
         </li>
-        <li className="cursor-pointer duration-500 hover:bg-[#2e3136] p-2 pr-4 pl-4 rounded-xl">
+        <li
+          className={`cursor-pointer duration-500 hover:bg-[#2e3136] p-2 pr-4 pl-4 rounded-xl ${
+            currentSection === "projects" ? "bg-[#2e3136]" : ""
+          }`}>
           <a href="#projects">Projects</a>
         </li>
-        <li className="cursor-pointer duration-500 hover:bg-[#2e3136] p-2 pr-4 pl-4 rounded-xl">
-          <a href="#skills">Skills</a>
-        </li>
-        <li className="cursor-pointer duration-500 hover:bg-[#2e3136] p-2 pr-4 pl-4 rounded-xl">
-          <a href="#contact">Contact</a>
+        <li
+          className={`cursor-pointer duration-500 hover:bg-[#2e3136] p-2 pr-4 pl-4 rounded-xl ${
+            currentSection === "skills-contact" ? "bg-[#2e3136]" : ""
+          }`}>
+          <a href="#skills-contact">Skills & Contact</a>
         </li>
         <div
           className="relative group"
@@ -138,28 +157,29 @@ const Navbar = () => {
         }`}
         onClick={handleToggle}></div>
       <ul
-        className={`fixed top-0 right-0 w-64 h-full text-[#c4cfde] text-[19px] font-bold bg-[#212428] z-50 transition-all duration-500 ease-in-out ${
+        className={`fixed top-0 right-0 w-64 h-full text-[#c4cfde] text-[19px] font-bold pt-24 bg-[#212428] z-50 transition-all duration-500 ease-in-out ${
           toggle ? "right-0" : "right-[-100%]"
         } flex flex-col text-[13px] gap-6 items-center pt-10 border-l border-[#2e3136]`}>
         <li
           onClick={handleToggle}
-          className="cursor-pointer duration-500 hover:bg-[#2e3136] p-2 pr-4 pl-4 rounded-xl mt-8">
+          className={`cursor-pointer duration-500 hover:bg-[#2e3136] p-2 pr-4 pl-4 rounded-xl ${
+            currentSection === "home" ? "bg-[#2e3136]" : ""
+          }`}>
           <a href="#home">Home</a>
         </li>
         <li
           onClick={handleToggle}
-          className="cursor-pointer duration-500 hover:bg-[#2e3136] p-2 pr-4 pl-4 rounded-xl">
+          className={`cursor-pointer duration-500 hover:bg-[#2e3136] p-2 pr-4 pl-4 rounded-xl ${
+            currentSection === "projects" ? "bg-[#2e3136]" : ""
+          }`}>
           <a href="#projects">Projects</a>
         </li>
         <li
           onClick={handleToggle}
-          className="cursor-pointer duration-500 hover:bg-[#2e3136] p-2 pr-4 pl-4 rounded-xl">
-          <a href="#skills">Skills</a>
-        </li>
-        <li
-          onClick={handleToggle}
-          className="cursor-pointer duration-500 hover:bg-[#2e3136] p-2 pr-4 pl-4 rounded-xl">
-          <a href="#contact">Contact</a>
+          className={`cursor-pointer duration-500 hover:bg-[#2e3136] p-2 pr-4 pl-4 rounded-xl ${
+            currentSection === "skills-contact" ? "bg-[#2e3136]" : ""
+          }`}>
+          <a href="#skills-contact">Skills & Contact</a>
         </li>
         <li
           onClick={handleToggle}

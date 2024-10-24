@@ -11,13 +11,19 @@ const App = () => {
     <>
       <Navbar />
       <div className="snap-y snap-mandatory overflow-y-scroll h-screen">
-        <section className="snap-start snap-always h-screen flex justify-center items-center">
+        <section
+          id="home"
+          className="snap-start snap-always h-screen flex justify-center items-center">
           <HomeSection />
         </section>
-        <section className="snap-start snap-always h-screen flex justify-center items-center">
+        <section
+          id="projects"
+          className="snap-start snap-always h-screen flex justify-center items-center">
           <ProjectsSection />
         </section>
-        <section className="snap-start snap-always h-screen flex justify-center items-center">
+        <section
+          id="skills-contact"
+          className="snap-start snap-always h-screen flex justify-center items-center">
           <div className="flex flex-col md:flex-row items-center mt-0 md:mt-[-7.5%] w-full">
             <SkillsSection />
             <ContactSection />

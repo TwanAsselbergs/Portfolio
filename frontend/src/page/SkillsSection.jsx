@@ -50,6 +50,14 @@ const SkillsSection = () => {
       src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg",
       alt: "GitHub",
     },
+    {
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg",
+      alt: "Visual Studio Code",
+    },
+    {
+      src: "https://styles.redditmedia.com/t5_rqf3h/styles/communityIcon_a6itlz5782eb1.png",
+      alt: "PHPMyAdmin",
+    },
   ];
 
   const shuffleArray = (array) => {
