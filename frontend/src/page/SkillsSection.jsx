@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
+import classNames from "classnames";
 
 const SkillsSection = () => {
+  const [isTitleVisible, setIsTitleVisible] = useState(false);
+  const titleRef = useRef(null);
+
   const skills = [
     {
       src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg",
@@ -58,9 +62,44 @@ const SkillsSection = () => {
 
   const shuffledSkills = shuffleArray([...skills]);
 
+  useEffect(() => {
+    const titleObserverOptions = {
+      threshold: 0.1,
+    };
+
+    const titleObserverCallback = (entries) => {
+      entries.forEach((entry) => {
+        setIsTitleVisible(entry.isIntersecting);
+      });
+    };
+
+    const titleObserver = new IntersectionObserver(
+      titleObserverCallback,
+      titleObserverOptions
+    );
+
+    if (titleRef.current) {
+      titleObserver.observe(titleRef.current);
+    }
+
+    return () => {
+      if (titleRef.current) {
+        titleObserver.unobserve(titleRef.current);
+      }
+    };
+  }, []);
+
   return (
     <div id="skills" className="w-[90%] pt-14 md:pt-0 mx-auto">
-      <h1 className="text-[#c4cfde] text-[34px] md:text-[40px] lg:text-[60px] text-center font-bold mt-20 md:mt-4">
+      <h1
+        ref={titleRef}
+        className={classNames(
+          "text-[#c4cfde] text-[34px] md:text-[40px] lg:text-[60px] text-center font-bold mt-20 md:mt-4 transform transition-all duration-1000",
+          {
+            "translate-y-0 opacity-100": isTitleVisible,
+            "translate-y-10 opacity-0": !isTitleVisible,
+          }
+        )}>
         Skills
       </h1>
       <div className="flex flex-col gap-4 justify-center mx-auto w-[40%] md:w-1/2 overflow-hidden pt-8 md:pt-20">

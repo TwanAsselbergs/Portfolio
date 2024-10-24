@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import classNames from "classnames";
-import logo from "./img/home-section/logo.jpeg";
+import logo from "./img/home-section/logo.png";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 const HomeSection = () => {
@@ -129,7 +129,7 @@ const HomeSection = () => {
         <img
           src={logo}
           alt="Logo"
-          className="lg:absolute object-cover cursor-pointer w-24 h-24 lg:w-full lg:h-[78%] mx-auto mt-2 md:mt-0 rounded-full shadow-2xl hover:shadow-3xl hover:scale-[101%] border-[#383b40] border-2 duration-500"
+          className="lg:absolute object-cover cursor-pointer w-24 h-24 lg:w-full lg:h-[78%] mx-auto mt-2 md:mt-0 rounded-full hover:scale-[101%] duration-500"
         />
       </div>
     </div>

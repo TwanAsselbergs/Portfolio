@@ -5,12 +5,12 @@ module.exports = {
     extend: {
       keyframes: {
         "slide-up": {
-          "0%": { transform: "translateY(150%)" },
-          "100%": { transform: "translateY(0)" },
+          "0%": { transform: "translateY(100%)", opacity: 0 },
+          "100%": { transform: "translateY(0)", opacity: 100 },
         },
         "slide-down": {
-          "0%": { transform: "translateY(0)" },
-          "100%": { transform: "translateY(400%)" },
+          "0%": { transform: "translateY(0)", opacity: 1 },
+          "100%": { transform: "translateY(100%)", opacity: 100 },
         },
         scroll: {
           from: { transform: "translateX(0)" },

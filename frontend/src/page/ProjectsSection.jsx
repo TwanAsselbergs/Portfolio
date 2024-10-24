@@ -1,11 +1,17 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
+import classNames from "classnames";
 
 const ProjectsSection = () => {
   const [selectedPort, setSelectedPort] = useState(null);
   const [posts, setPosts] = useState([]);
   const [isClosing, setIsClosing] = useState(false);
+  const [visiblePosts, setVisiblePosts] = useState({});
+  const [isSectionVisible, setIsSectionVisible] = useState(false);
+  const [isTitleVisible, setIsTitleVisible] = useState(false);
   const modalRef = useRef(null);
+  const sectionRef = useRef(null);
+  const titleRef = useRef(null);
 
   useEffect(() => {
     let url = `${process.env.REACT_APP_API_ROOT}/posts`;
@@ -32,6 +38,89 @@ const ProjectsSection = () => {
     };
   }, [selectedPort]);
 
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0,
+    };
+
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        setVisiblePosts((prev) => ({
+          ...prev,
+          [entry.target.dataset.id]: entry.isIntersecting,
+        }));
+      });
+    };
+
+    const observer = new IntersectionObserver(
+      observerCallback,
+      observerOptions
+    );
+
+    const postElements = document.querySelectorAll(".post-item");
+    postElements.forEach((element) => observer.observe(element));
+
+    return () => {
+      postElements.forEach((element) => observer.unobserve(element));
+    };
+  }, [posts]);
+
+  useEffect(() => {
+    const sectionObserverOptions = {
+      threshold: 0.1,
+    };
+
+    const sectionObserverCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setIsSectionVisible(true);
+        }
+      });
+    };
+
+    const sectionObserver = new IntersectionObserver(
+      sectionObserverCallback,
+      sectionObserverOptions
+    );
+
+    if (sectionRef.current) {
+      sectionObserver.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        sectionObserver.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    const titleObserverOptions = {
+      threshold: 0.1,
+    };
+
+    const titleObserverCallback = (entries) => {
+      entries.forEach((entry) => {
+        setIsTitleVisible(entry.isIntersecting);
+      });
+    };
+
+    const titleObserver = new IntersectionObserver(
+      titleObserverCallback,
+      titleObserverOptions
+    );
+
+    if (titleRef.current) {
+      titleObserver.observe(titleRef.current);
+    }
+
+    return () => {
+      if (titleRef.current) {
+        titleObserver.unobserve(titleRef.current);
+      }
+    };
+  }, []);
+
   const openModal = (port) => {
     setSelectedPort(port);
     setIsClosing(false);
@@ -42,20 +131,40 @@ const ProjectsSection = () => {
     setTimeout(() => {
       setSelectedPort(null);
       setIsClosing(false);
-    }, 300);
+    }, 200);
   };
 
   return (
-    <div id="projects" className="w-[90%] pt-14 md:pt-20 mx-auto">
-      <h1 className="text-[#c4cfde] text-[34px] md:text-[40px] lg:text-[60px] my-2 text-center font-bold">
+    <div
+      id="projects"
+      ref={sectionRef}
+      className="w-[90%] pt-14 md:pt-20 mx-auto">
+      <h1
+        ref={titleRef}
+        className={classNames(
+          "text-[#c4cfde] text-[34px] md:text-[40px] lg:text-[60px] my-2 text-center font-bold transform transition-all duration-1000",
+          {
+            "translate-y-0 opacity-100": isTitleVisible,
+            "translate-y-10 opacity-0": !isTitleVisible,
+          }
+        )}>
         Projects
       </h1>
       <div className="w-full my-8 flex gap-2 md:gap-6 overflow-x-auto pb-0 md:pb-8 scrollbar-none">
         {posts.map((post) => (
           <div
             key={post.id}
+            data-id={post.id}
             onClick={() => openModal(post)}
-            className="min-w-[85%] md:min-w-[45%] mb-7 md:mb-0 w-full home-icon-btn rounded-xl flex justify-center items-center flex-col cursor-pointer px-6 md:px-8 py-4 hover:bg-[#2e3136] drop-shadow-2xl hover:drop-shadow-md duration-500">
+            className={classNames(
+              "post-item min-w-[85%] md:min-w-[45%] mb-7 md:mb-0 w-full home-icon-btn rounded-xl flex justify-center items-center flex-col cursor-pointer px-6 md:px-8 py-4 hover:bg-[#2e3136] drop-shadow-2xl hover:drop-shadow-md duration-500",
+              {
+                "translate-x-0 opacity-100":
+                  visiblePosts[post.id] && isSectionVisible,
+                "translate-x-10 opacity-0":
+                  !visiblePosts[post.id] || !isSectionVisible,
+              }
+            )}>
             <div className="w-full mb-1 pt-0 md:pt-4">
               <img
                 src={post.featured_image_url}

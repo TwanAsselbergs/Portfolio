@@ -1,9 +1,48 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
+import classNames from "classnames";
 
 const ContactSection = () => {
+  const [isTitleVisible, setIsTitleVisible] = useState(false);
+  const titleRef = useRef(null);
+
+  useEffect(() => {
+    const titleObserverOptions = {
+      threshold: 0.01,
+    };
+
+    const titleObserverCallback = (entries) => {
+      entries.forEach((entry) => {
+        setIsTitleVisible(entry.isIntersecting);
+      });
+    };
+
+    const titleObserver = new IntersectionObserver(
+      titleObserverCallback,
+      titleObserverOptions
+    );
+
+    if (titleRef.current) {
+      titleObserver.observe(titleRef.current);
+    }
+
+    return () => {
+      if (titleRef.current) {
+        titleObserver.unobserve(titleRef.current);
+      }
+    };
+  }, []);
+
   return (
     <div id="contact" className="w-[90%] pt-14 md:pt-36 mx-auto">
-      <h1 className="text-[#c4cfde] text-[34px] md:text-[40px] lg:text-[60px] my-2 text-center font-bold">
+      <h1
+        ref={titleRef}
+        className={classNames(
+          "text-[#c4cfde] text-[34px] md:text-[40px] lg:text-[60px] my-2 text-center font-bold transform transition-all duration-1000",
+          {
+            "translate-y-0 opacity-100": isTitleVisible,
+            "translate-y-10 opacity-0": !isTitleVisible,
+          }
+        )}>
         Contact
       </h1>
       <form

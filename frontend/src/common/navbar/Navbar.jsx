@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import logo from "./img/logo.jpeg";
+import logo from "./img/logo.png";
 import { FaBars, FaLinkedin, FaGithub, FaFilePdf } from "react-icons/fa";
 
 const Navbar = () => {
@@ -54,7 +54,7 @@ const Navbar = () => {
               ? "h-[55px] w-[55px] lg:h-[70px] lg:w-[70px]"
               : "h-[55px] w-[55px] lg:h-[70px] lg:w-[70px]"
           } cursor-pointer rounded-full object-cover mb-4 lg:mb-0 ml-4 lg:ml-24 mt-4 border-2 duration-500 ease-in-out ${
-            logoDropdownOpen ? "border-[#c4cfde]" : "border-[#383b40]"
+            logoDropdownOpen ? "border-[#c4cfde]" : "border-[#212428]"
           }`}
         />
         <div className="hidden md:block">
