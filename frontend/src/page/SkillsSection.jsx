@@ -58,6 +58,10 @@ const SkillsSection = () => {
       src: "https://styles.redditmedia.com/t5_rqf3h/styles/communityIcon_a6itlz5782eb1.png",
       alt: "PHPMyAdmin",
     },
+    {
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
+      alt: "Git",
+    },
   ];
 
   const shuffleArray = (array) => {
@@ -98,7 +102,7 @@ const SkillsSection = () => {
   }, []);
 
   return (
-    <div id="skills" className="w-[90%] pt-0 md:pt-2 mx-auto">
+    <div id="skills" className="w-[90%] md:w-[50%] pt-0 md:pt-2 mx-auto">
       <h1
         ref={titleRef}
         className={classNames(
