@@ -159,7 +159,7 @@ const Navbar = () => {
       <ul
         className={`fixed top-0 right-0 w-64 h-full text-[#c4cfde] text-[19px] font-bold pt-24 bg-[#212428] z-50 transition-all duration-500 ease-in-out ${
           toggle ? "right-0" : "right-[-100%]"
-        } flex flex-col text-[13px] gap-6 items-center pt-10 border-l border-[#2e3136]`}>
+        } flex flex-col text-[13px] gap-6 items-center pt-10`}>
         <li
           onClick={handleToggle}
           className={`cursor-pointer duration-500 hover:bg-[#2e3136] p-2 pr-4 pl-4 rounded-xl ${
