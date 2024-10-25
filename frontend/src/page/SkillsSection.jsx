@@ -102,7 +102,7 @@ const SkillsSection = () => {
   }, []);
 
   return (
-    <div id="skills" className="w-[90%] md:w-[50%] pt-0 md:pt-2 mx-auto">
+    <div id="skills" className="w-[100%] md:w-[50%] pt-0 md:pt-2 mx-auto">
       <h1
         ref={titleRef}
         className={classNames(
