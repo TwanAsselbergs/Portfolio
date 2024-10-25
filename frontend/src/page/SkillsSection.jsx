@@ -56,7 +56,7 @@ const SkillsSection = () => {
     },
     {
       src: "https://styles.redditmedia.com/t5_rqf3h/styles/communityIcon_a6itlz5782eb1.png",
-      alt: "PHPMyAdmin",
+      alt: "phpMyAdmin",
     },
     {
       src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",

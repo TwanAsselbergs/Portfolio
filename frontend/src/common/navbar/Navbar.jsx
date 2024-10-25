@@ -53,7 +53,7 @@ const Navbar = () => {
   return (
     <div
       className={`fixed top-0 w-full z-[99] px-4 flex justify-between items-center mx-auto bg-[#212428] duration-500 ease-in-out ${
-        isScrolled ? "h-20 lg:h-24 shadow-lg" : "h-24 lg:h-32"
+        isScrolled ? "h-20 lg:h-24" : "h-24 lg:h-32"
       }`}>
       <div
         className="relative group"

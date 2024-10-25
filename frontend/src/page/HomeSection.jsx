@@ -105,13 +105,13 @@ const HomeSection = () => {
                 href="https://www.linkedin.com/in/twanasselbergs/"
                 target="_blank"
                 rel="noopener noreferrer">
-                <FaLinkedin className="w-[60px] rounded-xl cursor-pointer h-[60px] p-4 text-gray-700 bg-[#24272b] shadow-lg hover:shadow-xl duration-500 hover:bg-[#2e3136]" />
+                <FaLinkedin className="w-[60px] rounded-xl cursor-pointer h-[60px] p-4 text-gray-600 bg-[#24272b] shadow-lg hover:shadow-xl duration-500 hover:bg-[#2e3136]" />
               </a>
               <a
                 href="https://github.com/TwanAsselbergs"
                 target="_blank"
                 rel="noopener noreferrer">
-                <FaGithub className="w-[60px] rounded-xl cursor-pointer h-[60px] p-4 text-gray-700 bg-[#24272b] shadow-lg hover:shadow-xl duration-500 hover:bg-[#2e3136]" />
+                <FaGithub className="w-[60px] rounded-xl cursor-pointer h-[60px] p-4 text-gray-600 bg-[#24272b] shadow-lg hover:shadow-xl duration-500 hover:bg-[#2e3136]" />
               </a>
             </div>
           </div>

@@ -227,6 +227,13 @@ function add_custom_fields_to_rest_api() {
         },
         'schema' => null,
     ));
+
+    register_rest_field('post', 'github_link', array(
+        'get_callback' => function($post) {
+            return get_post_meta($post['id'], 'github_link', true);
+        },
+        'schema' => null,
+    ));
 }
 
 add_action('rest_api_init', 'add_custom_fields_to_rest_api');

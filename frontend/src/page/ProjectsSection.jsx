@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import classNames from "classnames";
+import { FaGithub } from "react-icons/fa";
 
 const ProjectsSection = () => {
   const [selectedPort, setSelectedPort] = useState(null);
@@ -188,12 +189,21 @@ const ProjectsSection = () => {
               isClosing ? "animate-slide-down" : "animate-slide-up"
             }`}>
             <div className="w-[100%] h-[450px] md:h-auto relative md:flex-row flex-col justify-center md:gap-[5%] port-click-overlay-bg md:px-8 py-8 md:py-14 items-center flex rounded-xl">
-              <div className="xl:w-[45%] w[90%] sm:w-[60%] md:w-[50] md:mb-0 lg:w-[60%] rounded-xl overflow-hidden shadow-2xl">
+              <div className="relative xl:w-[45%] w[90%] sm:w-[60%] md:w-[50] md:mb-0 lg:w-[60%] rounded-xl overflow-hidden shadow-2xl">
                 <img
                   src={selectedPort.featured_image_url}
                   alt={selectedPort.title.rendered}
-                  className="w-64 h-96 md:w-full md:h-96 object-cover"
+                  className="w-64 h-auto md:w-full md:h-96 object-contain md:object-cover"
                 />
+                {selectedPort.github_link && (
+                  <a
+                    href={selectedPort.github_link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute top-2 right-2 bg-[#2e3136] hover:bg-[#32363b] duration-500 cursor-pointer p-2.5 rounded-full">
+                    <FaGithub className="text-white" />
+                  </a>
+                )}
               </div>
               <div className="xl:w-[45%] w-[90%] sm:w-[70%] md:w-[50%] lg:w-[40%] h-96 overflow-hidden flex flex-col justify-center scrollbar-none">
                 <div className="flex flex-wrap items-center justify-center md:justify-start mt-3 md:mt-10 md:-ml-2">
