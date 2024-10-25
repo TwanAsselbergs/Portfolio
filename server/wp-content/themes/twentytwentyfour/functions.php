@@ -237,3 +237,8 @@ function add_custom_fields_to_rest_api() {
 }
 
 add_action('rest_api_init', 'add_custom_fields_to_rest_api');
+
+function add_cors_http_header(){
+    header("Access-Control-Allow-Origin: *");
+}
+add_action('init','add_cors_http_header');
