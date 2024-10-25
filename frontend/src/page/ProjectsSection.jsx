@@ -67,6 +67,7 @@ const ProjectsSection = () => {
   }, [posts]);
 
   useEffect(() => {
+    const sectionElement = sectionRef.current;
     const sectionObserverOptions = {
       threshold: 0.1,
     };
@@ -84,18 +85,19 @@ const ProjectsSection = () => {
       sectionObserverOptions
     );
 
-    if (sectionRef.current) {
-      sectionObserver.observe(sectionRef.current);
+    if (sectionElement) {
+      sectionObserver.observe(sectionElement);
     }
 
     return () => {
-      if (sectionRef.current) {
-        sectionObserver.unobserve(sectionRef.current);
+      if (sectionElement) {
+        sectionObserver.unobserve(sectionElement);
       }
     };
   }, []);
 
   useEffect(() => {
+    const titleElement = titleRef.current;
     const titleObserverOptions = {
       threshold: 0.1,
     };
@@ -111,13 +113,13 @@ const ProjectsSection = () => {
       titleObserverOptions
     );
 
-    if (titleRef.current) {
-      titleObserver.observe(titleRef.current);
+    if (titleElement) {
+      titleObserver.observe(titleElement);
     }
 
     return () => {
-      if (titleRef.current) {
-        titleObserver.unobserve(titleRef.current);
+      if (titleElement) {
+        titleObserver.unobserve(titleElement);
       }
     };
   }, []);
