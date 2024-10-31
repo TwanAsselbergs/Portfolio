@@ -59,7 +59,7 @@ const HomeSection = () => {
   return (
     <div
       id="home"
-      className="sm:w-[90%] w-[95%] md:w-[85%] lg:w-[90%] flex justify-center items-center flex-col lg:flex-row gap-5 lg:gap-36 mx-auto py-10 duration-500 pt-24 md:pt-40 overflow-hidden">
+      className="sm:w-[90%] w-[95%] md:w-[85%] lg:w-[90%] flex justify-center items-center flex-col lg:flex-row gap-5 lg:gap-36 mx-auto py-10 duration-500 pt-24 md:pt-36 overflow-hidden">
       <div className="lg:w-[45%] w-full order-2 lg:order-1">
         <h1
           ref={headingRef}
@@ -75,14 +75,14 @@ const HomeSection = () => {
         <p
           ref={paragraphRef}
           className={classNames(
-            "text-[#c4cfde] text-sm text-center lg:text-left leading-[30px] pr-6 pl-6 md:pr-0 md:pl-0 mt-6 transform transition-all duration-1000",
+            "text-[#c4cfde] text-md text-center lg:text-left leading-[30px] pr-6 pl-6 md:pr-0 md:pl-0 mt-6 transform transition-all duration-1000",
             {
               "translate-x-0 opacity-100": isParagraphVisible,
               "-translate-x-10 opacity-0": !isParagraphVisible,
             }
           )}>
           I’m a passionate and eager student currently studying software
-          development at Grafisch Lyceum Utrecht. I have a strong interest in
+          development at Grafisch Lyceum Utrecht. I’ve got a strong interest in
           full-stack development and enjoy creating user-friendly applications.
           My current aspiration is to complete my studies and then move on to
           HBO-Software Developer.
@@ -97,9 +97,7 @@ const HomeSection = () => {
             }
           )}>
           <div>
-            <h6 className="mb-4 text-center lg:text-left text-[14px] tracking-[3px] text-[#c4cfde] uppercase">
-              Profiles
-            </h6>
+            <h6 className="mb-4 text-center lg:text-left text-[14px] tracking-[3px] text-[#c4cfde] uppercase"></h6>
             <div className="flex gap-5">
               <a
                 href="https://www.linkedin.com/in/twanasselbergs/"

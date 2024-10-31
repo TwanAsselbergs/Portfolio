@@ -145,7 +145,7 @@ const ProjectsSection = () => {
       <h1
         ref={titleRef}
         className={classNames(
-          "text-[#c4cfde] text-[34px] md:text-[40px] lg:text-[60px] my-2 text-center font-bold transform transition-all duration-1000 mb-12 md:mb-0",
+          "text-[#c4cfde] text-[34px] md:text-[40px] lg:text-[60px] my-2 text-center font-bold transform transition-all duration-1000",
           {
             "translate-y-0 opacity-100": isTitleVisible,
             "translate-y-10 opacity-0": !isTitleVisible,

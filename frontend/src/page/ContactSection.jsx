@@ -48,10 +48,7 @@ const ContactSection = () => {
         Contact
       </h1>
       <div className="flex justify-center gap-5 mt-4">
-        <a
-          href="mailto:twanasselbergs@outlook.com"
-          target="_blank"
-          rel="noopener noreferrer">
+        <a href="mailto:twanasselbergs@outlook.com" rel="noopener noreferrer">
           <CiMail className="w-[60px] rounded-xl cursor-pointer h-[60px] p-4 text-gray-600 bg-[#24272b] shadow-lg hover:shadow-xl duration-500 hover:bg-[#2e3136]" />
         </a>
         <a

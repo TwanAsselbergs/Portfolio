@@ -108,15 +108,21 @@ const Navbar = () => {
         </li>
         <li
           className={`cursor-pointer duration-500 hover:bg-[#2e3136] p-2 pr-4 pl-4 rounded-xl ${
+            currentSection === "aboutme" ? "bg-[#2e3136]" : ""
+          }`}>
+          <a href="#aboutme">About Me</a>
+        </li>
+        <li
+          className={`cursor-pointer duration-500 hover:bg-[#2e3136] p-2 pr-4 pl-4 rounded-xl ${
             currentSection === "projects" ? "bg-[#2e3136]" : ""
           }`}>
           <a href="#projects">Projects</a>
         </li>
         <li
           className={`cursor-pointer duration-500 hover:bg-[#2e3136] p-2 pr-4 pl-4 rounded-xl ${
-            currentSection === "skills-contact" ? "bg-[#2e3136]" : ""
+            currentSection === "contact" ? "bg-[#2e3136]" : ""
           }`}>
-          <a href="#skills-contact">Skills & Contact</a>
+          <a href="#contact">Contact</a>
         </li>
         <div
           className="relative group"
@@ -170,6 +176,13 @@ const Navbar = () => {
         <li
           onClick={handleToggle}
           className={`cursor-pointer duration-500 hover:bg-[#2e3136] p-2 pr-4 pl-4 rounded-xl ${
+            currentSection === "aboutme" ? "bg-[#2e3136]" : ""
+          }`}>
+          <a href="#aboutme">About Me</a>
+        </li>
+        <li
+          onClick={handleToggle}
+          className={`cursor-pointer duration-500 hover:bg-[#2e3136] p-2 pr-4 pl-4 rounded-xl ${
             currentSection === "projects" ? "bg-[#2e3136]" : ""
           }`}>
           <a href="#projects">Projects</a>
@@ -177,9 +190,9 @@ const Navbar = () => {
         <li
           onClick={handleToggle}
           className={`cursor-pointer duration-500 hover:bg-[#2e3136] p-2 pr-4 pl-4 rounded-xl ${
-            currentSection === "skills-contact" ? "bg-[#2e3136]" : ""
+            currentSection === "contact" ? "bg-[#2e3136]" : ""
           }`}>
-          <a href="#skills-contact">Skills & Contact</a>
+          <a href="#contact">Contact</a>
         </li>
         <li
           onClick={handleToggle}

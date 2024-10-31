@@ -4,7 +4,7 @@ import Footer from "./common/footer/Footer";
 import HomeSection from "./page/HomeSection";
 import ProjectsSection from "./page/ProjectsSection";
 import ContactSection from "./page/ContactSection";
-import SkillsSection from "./page/SkillsSection";
+import AboutMeSection from "./page/AboutMeSection";
 
 const App = () => {
   return (
@@ -17,17 +17,19 @@ const App = () => {
           <HomeSection />
         </section>
         <section
+          id="aboutme"
+          className="snap-start snap-always h-screen flex justify-center items-center">
+          <AboutMeSection />
+        </section>
+        <section
           id="projects"
           className="snap-start snap-always h-screen flex justify-center items-center">
           <ProjectsSection />
         </section>
         <section
-          id="skills-contact"
+          id="contact"
           className="snap-start snap-always h-screen flex justify-center items-center">
-          <div className="flex flex-col md:flex-row items-center mt-0 md:mt-[-7.5%] w-full">
-            <SkillsSection />
-            <ContactSection />
-          </div>
+          <ContactSection />
         </section>
       </div>
       <Footer />
