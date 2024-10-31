@@ -143,7 +143,7 @@ const AboutMeSection = () => {
         into what it means to build a well-structured UX by building
         applications myself, as well as learning from others around me and on
         the internet. Recently, I’ve gotten increasingly more into JavaScript
-        and enjoy using its frameworks like Svelte, and React. My goal is to
+        and enjoy using its frameworks like Svelte and React. My goal is to
         become a well-rounded full-stack developer, as I’m intrigued by both
         design and back-end technologies such as databases, machine learning,
         and optimization.

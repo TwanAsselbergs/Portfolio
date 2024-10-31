@@ -17,7 +17,7 @@ const App = () => {
           <HomeSection />
         </section>
         <section
-          id="aboutme"
+          id="about-me"
           className="snap-start snap-always h-screen flex justify-center items-center">
           <AboutMeSection />
         </section>
