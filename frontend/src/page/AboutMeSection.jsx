@@ -121,7 +121,7 @@ const AboutMeSection = () => {
       <h1
         ref={titleRef}
         className={classNames(
-          "text-[#c4cfde] text-[34px] md:text-[40px] lg:text-[60px] my-2 text-center font-bold transform transition-all duration-1000 mt-24 md:mt-12",
+          "text-[#c4cfde] text-[34px] md:text-[40px] lg:text-[60px] my-2 text-center font-bold transform transition-all duration-1000 mt-24 md:mt-0",
           {
             "translate-y-0 opacity-100": isTitleVisible,
             "translate-y-10 opacity-0": !isTitleVisible,
@@ -132,7 +132,7 @@ const AboutMeSection = () => {
       <p
         ref={textRef}
         className={classNames(
-          "text-[#c4cfde] text-sm md:text-md lg:text-lg w-full md:w-3/4 lg:w-1/2 flex justify-center items-center mx-auto pr-4 pl-4 md:pr-0 md:pl-0 my-4 md:py-10 text-center transform transition-all duration-1000",
+          "text-[#c4cfde] text-sm md:text-[16px] w-full md:w-3/4 lg:w-1/2 flex justify-center items-center mx-auto pr-4 pl-4 md:pr-0 md:pl-0 my-4 md:py-10 text-center transform transition-all duration-1000",
           {
             "translate-y-0 opacity-100": isTextVisible,
             "translate-y-10 opacity-0": !isTextVisible,
@@ -152,7 +152,7 @@ const AboutMeSection = () => {
         Interested to see what tools I’m familiar with? Check out my current
         skillset below!
       </p>
-      <div className="flex flex-col gap-4 justify-center mx-auto w-full md:w-3/4 overflow-hidden pt-8 md:pt-7 md:mt-24">
+      <div className="flex flex-col gap-4 justify-center mx-auto w-full md:w-3/4 overflow-hidden pt-8 md:pt-7 md:mt-24 md:mb-0">
         <div className="flex gap-4 animate-scroll">
           {shuffledSkills.concat(shuffledSkills).map((skill, index) => (
             <img

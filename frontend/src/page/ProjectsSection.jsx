@@ -160,7 +160,7 @@ const ProjectsSection = () => {
             data-id={post.id}
             onClick={() => openModal(post)}
             className={classNames(
-              "post-item min-w-[85%] md:min-w-[45%] mb-7 md:mb-0 w-full home-icon-btn rounded-xl flex justify-center items-center flex-col cursor-pointer px-6 md:px-8 py-4 hover:bg-[#2e3136] drop-shadow-2xl hover:drop-shadow-md duration-500",
+              "post-item min-w-[85%] px-3 md:px-8 py-4 md:min-w-[45%] mb-7 md:mb-0 w-full home-icon-btn rounded-xl flex justify-center items-center flex-col cursor-pointer hover:bg-[#2e3136] drop-shadow-2xl hover:drop-shadow-md duration-500",
               {
                 "translate-x-0 opacity-100":
                   visiblePosts[post.id] && isSectionVisible,
